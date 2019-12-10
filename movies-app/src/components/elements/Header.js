@@ -1,7 +1,53 @@
 import React from "react";
+import styled from "styled-components";
+
+import Logo from "../images/reactMovie_logo.png";
+import TMDBLogo from "../images/tmdb_logo.svg";
+
+const StyledHeader = styled.div`
+  background: #1c1c1c;
+  padding: 0 20px;
+  box-sizing: border-box .header-content {
+    max-width: 1280px;
+    min-height: 120px;
+    padding: 20px 0;
+    margin: 0 auto;
+    box-sizing: border-box @media screen and (max-width: 500px) {
+      min-height: 0px;
+    }
+  }
+`;
+
+const StyledLogo = styled.img`
+  width: 250px;
+  margin-top: 40px;
+
+  @media screen and (max-width: 500px) {
+    width: 180px;
+    margin-top: 40px;
+  }
+`;
+
+const StyledTMDBLogo = styled.img`
+  width: 122px;
+  margin-top: 10px;
+  float: right;
+
+  @media screen and (max-width: 500px) {
+    display: inline-block;
+    width: 80px;
+  }
+`;
 
 const Header = () => {
-  return <div>Header</div>;
+  return (
+    <StyledHeader>
+      <div className="header-content">
+        <StyledLogo src={Logo} alt="logo" />
+        <StyledTMDBLogo src={TMDBLogo} alt="tmdb-logo" />
+      </div>
+    </StyledHeader>
+  );
 };
 
 export default Header;
